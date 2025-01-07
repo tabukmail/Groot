@@ -1,0 +1,15 @@
+/home/runner/TreeProject/bin/Debug/net8.0/NStree
+/home/runner/TreeProject/bin/Debug/net8.0/NStree.deps.json
+/home/runner/TreeProject/bin/Debug/net8.0/NStree.runtimeconfig.json
+/home/runner/TreeProject/bin/Debug/net8.0/NStree.dll
+/home/runner/TreeProject/bin/Debug/net8.0/NStree.pdb
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.AssemblyInfoInputs.cache
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.AssemblyInfo.cs
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.csproj.CoreCompileInputs.cache
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.sourcelink.json
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.dll
+/home/runner/TreeProject/obj/Debug/net8.0/refint/NStree.dll
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.pdb
+/home/runner/TreeProject/obj/Debug/net8.0/NStree.genruntimeconfig.cache
+/home/runner/TreeProject/obj/Debug/net8.0/ref/NStree.dll

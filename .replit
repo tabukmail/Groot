@@ -1,5 +1,5 @@
 modules = ["dotnet-8.0"]
-run = "dotnet run --project NStree/NStree.csproj"
+run = "dotnet run --project NStree.csproj"
 
 [nix]
 channel = "stable-24_05"

@@ -1,0 +1,8 @@
+modules = ["dotnet-8.0"]
+run = "dotnet run --project NStree/NStree.csproj"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "dotnet run"]

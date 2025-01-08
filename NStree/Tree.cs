@@ -1,7 +1,7 @@
 using System.Collections;
 
 
-namespace ConsoleApp1;
+namespace TreeProject;
 
 public class Tree
 {

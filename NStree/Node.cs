@@ -1,48 +1,59 @@
 namespace ConsoleApp1;
-//cccc 1111 2223223232-----------77--  ----6666668888-----zzzzzzzz
 
-public class Node
+public class Node : IComparable 
 {
-    private int Parent_ID;
-    private int ID;
-    private int Left_Key;
-    private int Right_Key;
-    private int Level;
-    private string Name;
+    private int _parentId;
+    private int _id;
+    private int _leftKey;
+    private int _rightKey;
+    private int _level;
+    private string _name;
 
-    public int getParentID() => Parent_ID;
-    public void setParentID(int id) => Parent_ID = id;
+    public int GetParentId() => _parentId;
+    public void SetParentId(int id) => _parentId = id;
 
-    public int getID() => ID;
-    public void setID(int id) => ID = id;
+    public int GetId() => _id;
+    public void SetId(int id) => _id = id;
 
-    public int getLeft_Key() => Left_Key;
-    public void setLeft_Key(int key) => Left_Key = key;
+    public int GetLeft_Key() => _leftKey;
+    public void setLeft_Key(int key) => _leftKey = key;
 
-    public int getRight_Key() => Right_Key;
-    public void setRight_Key(int key) => Right_Key = key;
+    public int GetRight_Key() => _rightKey;
+    public void setRight_Key(int key) => _rightKey = key;
 
-    public int getLevel() => Level;
-    public void setLevel(int level) => Level = level;
+    public int GetLevel() => _level;
+    public void SetLevel(int level) => _level = level;
 
-    public string getName() => Name;
-    public void setName(string name) => Name = name;
+    public string GetName() => _name;
+    public void SetName(string name) => _name = name;
+    
+   
+    public int CompareTo(object? incomingobject) 
+    { 
+        Node incomingNode = incomingobject as Node ?? throw new InvalidOperationException(); 
+        return this._leftKey.CompareTo(incomingNode._leftKey); 
+    } 
+    
+    
+    
+    
 
 
-    public Node(int parent_id, int id, int left_key, int right_key, int level)
+    public Node(int parentId, int id, int leftKey, int rightKey, int level, string name)
     {
-        Parent_ID = parent_id;
-        ID = id;
-        Left_Key = left_key;
-        Right_Key = right_key;
-        Level = level;
+        _parentId = parentId;
+        _id = id;
+        _leftKey = leftKey;
+        _rightKey = rightKey;
+        _level = level;
+        _name = name;
     }
 
-
-    public Node(int parent_id, string name)
+    
+    public Node(int parentId, string name)
     {
-        Parent_ID = parent_id;
-        Name = name;
+        _parentId = parentId;
+        _name = name;
     }
 
 

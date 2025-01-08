@@ -10,20 +10,25 @@ class Program
     {   
         
        Tree tree = new Tree();
-       tree.addNode(1,"first node");
-       tree.addNode(2,"second node");
 
+    
+       tree.AddNode(1, "1-1");
+       tree.AddNode(1, "1-2");
+       tree.AddNode(1, "1-3");
+       tree.AddNode(3, "1-2-1");
+       tree.AddNode(3, "1-2-2");
+       tree.AddNode(3, "1-2-3");
+       tree.AddNode(4, "1-3-1");
+       tree.AddNode(7, "1-2-3-1");
+       tree.AddNode(0, "0000");
+       tree.AddNode(0, "0001");
        
-       
-       foreach (Node element in tree.getList())
+       foreach (Node element in tree.GetTree())
        {
-           Console.WriteLine(element.getParentID());
+           Console.WriteLine($"{element.GetParentId()}, {element.GetId()}, {element.GetLeft_Key()}, {element.GetRight_Key()}, {element.GetLevel()}, {element.GetName()}");
+           
        }
 
-//cmmmmmmmmmm99999
        
-      
- 
-
     }
 }

@@ -4,10 +4,6 @@ namespace ConsoleApp1.NStree;
 
 public class Tree 
 {
-   
-    
-    
-    
     private ArrayList _tree = new ArrayList{new Node(0, 1, 1, 2, 0, "root")};  
     
     public ArrayList GetTree()

@@ -51,12 +51,16 @@ class Program
            Console.WriteLine($"{element.GetParentId()}, {element.GetId()}, {element.GetLeft_Key()}, {element.GetRight_Key()}, {element.GetLevel()}, {element.GetName()}, == >>  {element.GetNodeValues().GetValues()[0]}");
        }
 
+       Node2 nnn = new Node2();
+       nnn.getNumber();
        
+       Node2.Tree2 mmmm = new Node2.Tree2();
        
-     
 
-       
-       
+
+
+
+
 
     }
 }

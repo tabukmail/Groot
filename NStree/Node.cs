@@ -19,10 +19,10 @@ public class Node : IComparable
     public void SetName(string name) => _name = name;
     
     public int GetLeft_Key() => _leftKey;
-    protected internal void setLeft_Key(int key) => _leftKey = key;
+    internal void setLeft_Key(int key) => _leftKey = key;
 
     public int GetRight_Key() => _rightKey;
-    protected internal void setRight_Key(int key) => _rightKey = key;
+    internal void setRight_Key(int key) => _rightKey = key;
 
     
     

@@ -1,23 +1,26 @@
 using System.Collections;
 
+namespace ConsoleApp1.NStree;
 
-namespace TreeProject;
-
-public class Tree
+public class Tree 
 {
-
+   
+    
+    
+    
     private ArrayList _tree = new ArrayList{new Node(0, 1, 1, 2, 0, "root")};  
     
     public ArrayList GetTree()
     {
         return _tree;
     }
-    
-    public void AddNode(int parent_id, string newNodeName)
+
+   
+    public void AddNode(int parentId, string newNodeName)
     {
         
-        if ((parent_id > _tree.Count) || (parent_id  <= 0)){
-            Console.WriteLine($":: -> {parent_id } is out of possible range");
+        if ((parentId > _tree.Count) || (parentId  <= 0)){
+            Console.WriteLine($":: -> {parentId } is out of possible range");
             return;
         }
         
@@ -29,7 +32,7 @@ public class Tree
         
        foreach (Node? node in _tree.ToArray())
         {
-            if (node != null && parent_id == node.GetId())
+            if (node != null && parentId == node.GetId())
             {
                 parentRightKey = node.GetRight_Key();
                 parentLefthKey = node.GetLeft_Key();
@@ -55,14 +58,13 @@ public class Tree
             }
         }
        
-        _tree.Add (new Node(parent_id, _tree.Count + 1, lefthKey, rightKey, level, newNodeName));
+        _tree.Add (new Node(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName));
         
        
        _tree.Sort();
             
-        
-        
-    } 
-    
-  
+       }
+
+
 }
+

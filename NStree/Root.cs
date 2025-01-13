@@ -2,7 +2,7 @@ using System.Collections;
 
 namespace ConsoleApp1.NStree;
 
-public class Node2 : IComparable
+public class Root : IComparable
 {
     private int _parentId;
     private int _id;
@@ -31,7 +31,7 @@ public class Node2 : IComparable
     public NodeValues GetNodeValues() => _nodeValues;
     
   
-    public Node2(int parentId, int id, int leftKey, int rightKey, int level, string name)
+    public Root(int parentId, int id, int leftKey, int rightKey, int level, string name)
     {
         _parentId = parentId;
         _id = id;
@@ -42,7 +42,7 @@ public class Node2 : IComparable
     }
 
     
-    public Node2(int parentId, string name)
+    public Root(int parentId, string name)
     {
         _parentId = parentId;
         _name = name;
@@ -53,13 +53,13 @@ public class Node2 : IComparable
 
     public int CompareTo(object? incomingobject) 
     { 
-        Node2 incomingNode = incomingobject as Node2 ?? throw new InvalidOperationException(); 
+        Root incomingNode = incomingobject as Root ?? throw new InvalidOperationException(); 
         return this._leftKey.CompareTo(incomingNode._leftKey); 
     } 
         /// ===================================== bested class ============================
-        public class Tree2 
+        public class Tree 
             {
-                private ArrayList _tree = new ArrayList{new Node2(0, 1, 1, 2, 0, "root")};  
+                private ArrayList _tree = new ArrayList{new Root(0, 1, 1, 2, 0, "root")};  
                 
                 public ArrayList GetTree()
                 {
@@ -81,7 +81,7 @@ public class Node2 : IComparable
                     var parentRightKey = 0;
                     var parentLefthKey = 0;
                     
-                   foreach (Node2? node in _tree.ToArray())
+                   foreach (Root? node in _tree.ToArray())
                     {
                         if (node != null && parentId == node.GetId())
                         {
@@ -95,7 +95,7 @@ public class Node2 : IComparable
                         }
                     }
                    
-                    foreach (Node2? node in _tree.ToArray())
+                    foreach (Root? node in _tree.ToArray())
                     {
                         if (node != null && node.GetLeft_Key() > parentRightKey)
                         {
@@ -109,7 +109,7 @@ public class Node2 : IComparable
                         }
                     }
                    
-                    _tree.Add (new Node2(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName));
+                    _tree.Add (new Root(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName));
                     
                    
                    _tree.Sort();

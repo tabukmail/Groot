@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace ConsoleApp1;
 
 public class NodeValues
@@ -6,7 +8,7 @@ public class NodeValues
     private List<int> _values = new List<int>(5){0,0,0,0,0};
     
     
-    public List<int> GetValues()
+    public  List<int> GetValues()
     {
         return _values;
     }

@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace ConsoleApp1;
+namespace GrootProject;
 
 public class NodeValues
 {

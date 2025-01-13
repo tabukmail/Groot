@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace ConsoleApp1.NStree;
+namespace GrootProject.Tree;
 
 public class Root : IComparable
 {

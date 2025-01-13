@@ -1,6 +1,6 @@
-using ConsoleApp1.NStree;
+using GrootProject.Tree;
 
-namespace ConsoleApp1;
+namespace GrootProject;
 
 class Program
 {

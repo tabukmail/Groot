@@ -7,7 +7,7 @@ class Program
     static void Main()
     {   
         
-       Root.Tree tree = new Root.Tree();
+       Groot.Tree tree = new Groot.Tree();
        tree.AddNode(1, "1-1");
        tree.AddNode(1, "1-2");
        tree.AddNode(1, "1-3");
@@ -18,7 +18,7 @@ class Program
        tree.AddNode(7, "1-2-3-1");
        
        
-       foreach (Root element in tree.GetTree())
+       foreach (Groot element in tree.GetTree())
        {
            if (element.GetId() == 6 )
            {
@@ -31,11 +31,11 @@ class Program
            Console.WriteLine($"{element.GetParentId()}, {element.GetId()}, {element.GetLeft_Key()}, {element.GetRight_Key()}, {element.GetLevel()}, {element.GetName()}, == >>  {element.GetNodeValues().GetValues()[0]}");
        }
 
-       var nodara = (Root)tree.GetTree()[7]!;
+       var nodara = (Groot)tree.GetTree()[7]!;
        
        
 
-       Root.Tree oak = new Root.Tree();
+       Groot.Tree oak = new Groot.Tree();
        
        
        

@@ -2,7 +2,7 @@ using System.Collections;
 
 namespace GrootProject.Tree;
 
-public class Root : IComparable
+public class Groot : IComparable
 {
     private int _parentId;
     private int _id;
@@ -31,7 +31,7 @@ public class Root : IComparable
     public NodeValues GetNodeValues() => _nodeValues;
     
   
-    public Root(int parentId, int id, int leftKey, int rightKey, int level, string name)
+    public Groot(int parentId, int id, int leftKey, int rightKey, int level, string name)
     {
         _parentId = parentId;
         _id = id;
@@ -42,7 +42,7 @@ public class Root : IComparable
     }
 
     
-    public Root(int parentId, string name)
+    public Groot(int parentId, string name)
     {
         _parentId = parentId;
         _name = name;
@@ -53,13 +53,13 @@ public class Root : IComparable
 
     public int CompareTo(object? incomingobject) 
     { 
-        Root incomingNode = incomingobject as Root ?? throw new InvalidOperationException(); 
+        Groot incomingNode = incomingobject as Groot ?? throw new InvalidOperationException(); 
         return this._leftKey.CompareTo(incomingNode._leftKey); 
     } 
         /// ===================================== bested class ============================
         public class Tree 
             {
-                private ArrayList _tree = new ArrayList{new Root(0, 1, 1, 2, 0, "root")};  
+                private ArrayList _tree = new ArrayList{new Groot(0, 1, 1, 2, 0, "root")};  
                 
                 public ArrayList GetTree()
                 {
@@ -81,7 +81,7 @@ public class Root : IComparable
                     var parentRightKey = 0;
                     var parentLefthKey = 0;
                     
-                   foreach (Root? node in _tree.ToArray())
+                   foreach (Groot? node in _tree.ToArray())
                     {
                         if (node != null && parentId == node.GetId())
                         {
@@ -95,7 +95,7 @@ public class Root : IComparable
                         }
                     }
                    
-                    foreach (Root? node in _tree.ToArray())
+                    foreach (Groot? node in _tree.ToArray())
                     {
                         if (node != null && node.GetLeft_Key() > parentRightKey)
                         {
@@ -109,7 +109,7 @@ public class Root : IComparable
                         }
                     }
                    
-                    _tree.Add (new Root(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName));
+                    _tree.Add (new Groot(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName));
                     
                    
                    _tree.Sort();

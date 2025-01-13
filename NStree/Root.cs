@@ -115,6 +115,15 @@ public class Root : IComparable
                    _tree.Sort();
                         
                    }
+                
+                //TODO 
+                // 1. DeleteNode()
+                // 2. MoveNode()
+                // 3. IsLeaf()
+                // 4. CountNodes()
+                // 5. plug data source option : JSON or DB option 
+                
+                
             
             
             }

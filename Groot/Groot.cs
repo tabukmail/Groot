@@ -2,6 +2,16 @@ using System.Collections;
 
 namespace Groot;
 
+//TODO 
+// 1. DeleteNode()
+// 2. MoveNode()
+// 3. IsLeaf()
+// 4. CountNodes()
+// 5. plug data source option : JSON or DB option 
+
+
+
+
 public class Groot : IComparable
 {
     private int _parentId;
@@ -116,12 +126,7 @@ public class Groot : IComparable
                         
                    }
                 
-                //TODO 
-                // 1. DeleteNode()
-                // 2. MoveNode()
-                // 3. IsLeaf()
-                // 4. CountNodes()
-                // 5. plug data source option : JSON or DB option 
+               
                 
                 
             

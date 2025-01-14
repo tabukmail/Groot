@@ -3,11 +3,14 @@ using System.Collections;
 namespace Groot;
 
 //TODO 
-// 1. DeleteNode()
+// 1. DeleteNode() - option to lock node from deletion if it hes NodeValues
 // 2. MoveNode()
 // 3. IsLeaf()
 // 4. CountNodes()
-// 5. plug data source option : JSON or DB option 
+// 5. options to plug-in data source  : JSON or DB option 
+// 6. name automation according parents last digit
+// 7. create PrintTree() method after GetTree() method
+
 
 
 
@@ -39,9 +42,9 @@ public class Groot : IComparable
     
     
     public NodeValues GetNodeValues() => _nodeValues;
-    
-  
-    public Groot(int parentId, int id, int leftKey, int rightKey, int level, string name)
+
+
+    private Groot(int parentId, int id, int leftKey, int rightKey, int level, string name)
     {
         _parentId = parentId;
         _id = id;
@@ -52,7 +55,7 @@ public class Groot : IComparable
     }
 
     
-    public Groot(int parentId, string name)
+    private Groot(int parentId, string name)
     {
         _parentId = parentId;
         _name = name;

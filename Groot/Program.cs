@@ -3,21 +3,19 @@
 class Program
 {
     static void Main()
-    {   
-        
- 
-       Groot.Tree tree = new Groot.Tree();
-       tree.AddNode(1, "1-1");
-       tree.AddNode(1, "1-2");
-       tree.AddNode(1, "1-3");
-       tree.AddNode(3, "1-2-1");
-       tree.AddNode(3, "1-2-2");
-       tree.AddNode(3, "1-2-3");
-       tree.AddNode(4, "1-3-1");
-       tree.AddNode(7, "1-2-3-1");
+    { 
+       Groot.Tree peach = new Groot.Tree();
+       peach.AddNode(1, "1-1");
+       peach.AddNode(1, "1-2");
+       peach.AddNode(1, "1-3");
+       peach.AddNode(3, "1-2-1");
+       peach.AddNode(3, "1-2-2");
+       peach.AddNode(3, "1-2-3");
+       peach.AddNode(4, "1-3-1");
+       peach.AddNode(7, "1-2-3-1");
        
        
-       foreach (Groot element in tree.GetTree())
+       foreach (Groot element in peach.GetTree())
        {
            if (element.GetId() == 6 )
            {
@@ -30,33 +28,52 @@ class Program
            Console.WriteLine($"{element.GetParentId()}, {element.GetId()}, {element.GetLeft_Key()}, {element.GetRight_Key()}, {element.GetLevel()}, {element.GetName()}, == >>  {element.GetNodeValues().GetValues()[0]}");
        }
 
-       var nodara = (Groot)tree.GetTree()[7]!;
-       
-       
+       var nodara = (Groot)peach.GetTree()[7]!;
+       Console.WriteLine(nodara);
 
-   
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
+
+       Groot.Tree legvi = new Groot.Tree();
+       legvi.AddNode(1, "1-1");
+       legvi.AddNode(1, "1-2");
+
+       foreach (Groot le in legvi.GetTree())
+       {
+           if (le.GetId() == 3)
+           {
+               le.GetNodeValues().SetValues(0,255);
+           }
+
+           foreach (var be in le.GetNodeValues().GetValues())
+           {
+               Console.WriteLine($" == >>>>>>> {be} ");
+           }
+           
+           Console.WriteLine($"{le.GetName()} == >> {le.GetNodeValues().GetValues()[0]} ");
+           
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Groot;
 
 public class NodeValues
@@ -9,6 +11,7 @@ public class NodeValues
     // 4. possibility to add STRING and CHAR values to node_values.
     // 5. split tree and agregate separately
     // 6. the print() method of the node values for the node 
+    //xxx
     
     
     private List<int> _values = new List<int>(5){0,0,0,0,0};

@@ -1,4 +1,6 @@
-﻿namespace Groot;
+﻿using System;
+
+namespace Groot;
 
 class Program
 {

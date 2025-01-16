@@ -73,7 +73,7 @@ public class Groot : IComparable
         /// ===================================== bested class ============================
         public class Tree 
             {
-                private ArrayList _tree = new ArrayList{new Groot(0, 1, 1, 2, 0, "root")};  
+                private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root")];  
                 
                 public ArrayList GetTree()
                 {

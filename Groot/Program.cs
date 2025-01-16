@@ -20,11 +20,14 @@ class Program
        peach.AddNode(7, "1-2-3-1");
 
        peach.AddNode(3,"dadad");
+<<<<<<< HEAD
        
        
        var nodara = (Groot)peach.GetTree()[8]!;
        nodara.GetNodeValues().SetValues(0,2056);
        
+=======
+>>>>>>> cf7096d (coco3)
        
        
        var nodara = (Groot)peach.GetTree()[8]!;

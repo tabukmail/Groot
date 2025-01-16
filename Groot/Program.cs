@@ -18,6 +18,8 @@ class Program
        peach.AddNode(3, "1-2-3");
        peach.AddNode(4, "1-3-1");
        peach.AddNode(7, "1-2-3-1");
+
+       peach.AddNode(3,"dadad");
        
        
        foreach (Groot element in peach.GetTree())
@@ -51,7 +53,7 @@ class Program
 
            foreach (var be in le.GetNodeValues().GetValues())
            {
-               Console.WriteLine($" == >>>>>>> {be} ");
+                Console.WriteLine($" == >>>>>>> {be} ");
            }
            
            Console.WriteLine($"{le.GetName()} == >> {le.GetNodeValues().GetValues()[0]} ");

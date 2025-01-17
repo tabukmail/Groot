@@ -1,11 +1,5 @@
 using System;
 
-<<<<<<< HEAD
-// some some 123456
-=======
-// some comm
->>>>>>> 70e6297 (coco6)
-
 
 namespace Groot;
 

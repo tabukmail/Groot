@@ -10,6 +10,7 @@ namespace Groot;
 // 5. options to plug-in data source  : JSON or DB option 
 // 6. name automation according parents last digit
 // 7. create PrintTree() method after GetTree() method
+// 8. AddValueToNode() create method to add value directly from tree
 
 
 
@@ -128,6 +129,11 @@ public class Groot : IComparable
                    _tree.Sort();
                         
                    }
+
+                public void AddValueToNode(int nodeIndex, int nodeValueIndex, int value)
+                {
+                    //some code to add node value directly from tree
+                }
                 
                
                 

@@ -1,12 +1,7 @@
-﻿using System;
-
-// some some 1234
+using System;
 
 
 namespace Groot;
-
-
-
 
 class Program
 {

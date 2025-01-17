@@ -1,6 +1,6 @@
 ﻿using System;
 
-// some some
+// some comm
 
 
 namespace Groot;

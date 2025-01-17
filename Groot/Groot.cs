@@ -73,7 +73,7 @@ public class Groot : IComparable
         Groot incomingNode = incomingobject as Groot ?? throw new InvalidOperationException(); 
         return this._leftKey.CompareTo(incomingNode._leftKey); 
     } 
-        /// ===================================== bested class ============================
+        /// ===================================== nested class Tree ============================
         public class Tree 
             {
                 private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root")];  
@@ -83,7 +83,6 @@ public class Groot : IComparable
                     return _tree;
                 }
             
-               
                 public void AddNode(int parentId, string newNodeName)
                 {
                     

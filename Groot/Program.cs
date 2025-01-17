@@ -67,7 +67,12 @@ class Program
 
 
 
+       int inz = 5;
+       string ins = "5";
+       Console.WriteLine(inz.GetTypeCode());
+       Console.WriteLine(ins.GetTypeCode());
 
+       Groot.Tree groot = new Groot.Tree();
 
 
 

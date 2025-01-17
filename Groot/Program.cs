@@ -27,6 +27,11 @@ class Program
        
        
        
+       var nodara = (Groot)peach.GetTree()[8]!;
+       nodara.GetNodeValues().SetValues(0,2056);
+       
+       
+       
        foreach (Groot element in peach.GetTree())
        {
            if (element.GetId() == 6 )

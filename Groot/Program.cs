@@ -22,6 +22,11 @@ class Program
        peach.AddNode(3,"dadad");
        
        
+       var nodara = (Groot)peach.GetTree()[8]!;
+       nodara.GetNodeValues().SetValues(0,2056);
+       
+       
+       
        foreach (Groot element in peach.GetTree())
        {
            if (element.GetId() == 6 )
@@ -35,8 +40,8 @@ class Program
            Console.WriteLine($"{element.GetParentId()}, {element.GetId()}, {element.GetLeft_Key()}, {element.GetRight_Key()}, {element.GetLevel()}, {element.GetName()}, == >>  {element.GetNodeValues().GetValues()[0]}");
        }
 
-       var nodara = (Groot)peach.GetTree()[7]!;
-       Console.WriteLine(nodara);
+       
+       
 
 
 

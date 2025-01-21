@@ -33,18 +33,12 @@ public class Groot : IComparable
     public int GetParentId() => _parentId;
     public int GetId() => _id;
     public int GetLevel() => _level;
-    
     public string GetName() => _name;
     public void SetName(string name) => _name = name;
-    
     public int GetLeft_Key() => _leftKey;
     private void setLeft_Key(int key) => _leftKey = key;
-
     public int GetRight_Key() => _rightKey;
     private void setRight_Key(int key) => _rightKey = key;
-
-    
-    
     public NodeValues GetNodeValues() => _nodeValues;
 
 
@@ -73,6 +67,7 @@ public class Groot : IComparable
         Groot incomingNode = incomingobject as Groot ?? throw new InvalidOperationException(); 
         return this._leftKey.CompareTo(incomingNode._leftKey); 
     } 
+        
         /// ===================================== nested class Tree ============================
         public class Tree 
             {

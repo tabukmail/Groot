@@ -79,10 +79,10 @@ class Program
 
 
 
+        var psw =  new Password();
+        var password = psw.Next();
 
-
-
-
+        Console.WriteLine($"{password}");
 
 
 

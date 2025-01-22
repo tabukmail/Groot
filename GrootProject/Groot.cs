@@ -40,6 +40,7 @@ public class Groot : IComparable
     public int GetRight_Key() => _rightKey;
     private void setRight_Key(int key) => _rightKey = key;
     public NodeValues GetNodeValues() => _nodeValues;
+   
 
 
     private Groot(int parentId, int id, int leftKey, int rightKey, int level, string name)
@@ -70,10 +71,10 @@ public class Groot : IComparable
         
         /// ===================================== nested class Tree ============================
         public class Tree 
-            {
+        {
                 private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root")];  
                 
-                public ArrayList GetTree()
+                public  ArrayList GetTree()
                 {
                     return _tree;
                 }
@@ -132,12 +133,25 @@ public class Groot : IComparable
                     //some code to add node value directly from tree
                 }
                 
+                public object GetValuesOf(string nodeName)
+                {
+                    var value = 0;
+                    foreach (Groot node in _tree)
+                    {
+                        if (node.GetName() == nodeName)
+                        {
+                            value = node.GetNodeValues().GetValues()[0];
+                            //Console.WriteLine(value);
+                        }
+                        
+                    }
+
+                    return value;
+                }
+
+
                
-                
-                
-            
-            
-            }
+        }
 
 
 }

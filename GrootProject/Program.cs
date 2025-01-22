@@ -22,8 +22,6 @@ class Program
        peach.AddNode(3,"dadad");
        
        
-       
-       
        var nodara = (Groot)peach.GetTree()[8]!;
        nodara.GetNodeValues().SetValues(0,2056);
        
@@ -46,8 +44,6 @@ class Program
        legvi.AddNode(1, "1-2");
        
        
-       
-       
        foreach (Groot le in legvi.GetTree())
        {
            if (le.GetId() == 3)
@@ -68,8 +64,7 @@ class Program
        Console.WriteLine(ins.GetTypeCode());
 
 
-
-      Console.WriteLine(peach.GetValuesOf("1-2-2"));
+       Console.WriteLine(peach.GetValuesOf("1-2-2"));
 
       
 

@@ -134,9 +134,9 @@ public class Groot : IComparable
                     //some code to add node value directly from tree
                 }
                 
-                public object GetValuesOf(string nodeName, int valueIndex)
+                public object GetValueOfNode(string nodeName, int valueIndex)
                 {
-                    var value = 0;
+                    object? value = 0;
                     foreach (Groot node in _tree)
                     {
                         if (node.GetName() == nodeName)
@@ -149,9 +149,45 @@ public class Groot : IComparable
 
                     return value;
                 }
+                
+                // public object GetValuesOfNode(string nodeName)
+                // {
+                //     ArrayList values = new ArrayList();
+                //     foreach (Groot node in _tree)
+                //     {
+                //         if (node.GetName() == nodeName)
+                //         {
+                //             values = node.GetNodeValues().GetValues().CopyTo(values);
+                //
+                //         }
+                //         
+                //     }
+                //     
+                // }
 
+                public object PrintAllValuesOfNode(string nodeName)
+                {
+                    var value = "";
+                    foreach (Groot node in _tree)
+                    {
+                        if (node.GetName() == nodeName)
+                        {
+                            value = string.Join(", ", node.GetNodeValues().GetValues());
+                            
+                        }
+                        
+                    }
 
+                    return value;
+                }
                
+                
+                
+                
+                
+                
+                
+                
         }
 
 

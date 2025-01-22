@@ -31,7 +31,7 @@ class Program
            if (element.GetId() == 6 )
            {
                element.GetNodeValues().SetValues(0, 68);
-               int nodeval = element.GetNodeValues().GetValues()[0];
+               int nodeval = (int)element.GetNodeValues().GetValues()[0]!;
                
                // Console.WriteLine($" nod val {nodeval}");
            }
@@ -58,19 +58,18 @@ class Program
                 // Console.WriteLine($"{le.GetName()} == >> {le.GetNodeValues().GetValues()[0]} ");
        }
 
-       int inz = 5;
-       string ins = "5";
-       Console.WriteLine(inz.GetTypeCode());
-       Console.WriteLine(ins.GetTypeCode());
+       // int inz = 5;
+       // string ins = "5";
+       // Console.WriteLine(inz.GetTypeCode());
+       // Console.WriteLine(ins.GetTypeCode());
 
 
-       Console.WriteLine(peach.GetValuesOf("1-2-2", 0));
-
-      
-
+      Console.WriteLine(peach.GetValueOfNode("1-2-2", 0));
+      Console.WriteLine(peach.PrintAllValuesOfNode("1-2-2"));
 
 
-
+       // object obj1 = typeof(string); //type experimental 
+       // Console.WriteLine(obj1.GetType());
 
 
 

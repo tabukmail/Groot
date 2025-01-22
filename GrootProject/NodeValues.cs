@@ -16,12 +16,14 @@ public class NodeValues
     //xxx
     
     
-    private List<int> _values = new List<int>(5){0,0,0,0,0};
+    private ArrayList _values = new ArrayList (5){0,0,0,0,0};
     private ArrayList _types = new ArrayList(5){0,0,0,0,0};
     
-    // object obj1 = String; //type experimental 
+    
+    
+    
 
-    public  List<int> GetValues()
+    public  ArrayList GetValues()
     {
         return _values;
     }
@@ -30,5 +32,6 @@ public class NodeValues
     {
         _values[index] = value;
     }
+    
     
 }

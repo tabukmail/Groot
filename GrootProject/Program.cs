@@ -1,7 +1,6 @@
 using System;
 using PasswordGenerator;
 
-
 namespace Groot;
 
 class Program
@@ -21,11 +20,8 @@ class Program
 
        peach.AddNode(3,"dadad");
        
-       
        var nodara = (Groot)peach.GetTree()[8]!;
        nodara.GetNodeValues().SetValues(0,2056);
-       
-       
        
        
        foreach (Groot element in peach.GetTree())
@@ -35,17 +31,12 @@ class Program
                element.GetNodeValues().SetValues(0, 68);
                int nodeval = element.GetNodeValues().GetValues()[0];
                
-               
                // Console.WriteLine($" nod val {nodeval}");
            }
            Console.WriteLine($"{element.GetParentId()}, {element.GetId()}, {element.GetLeft_Key()}, {element.GetRight_Key()}, {element.GetLevel()}, |||  {element.GetName()}, == >>  {element.GetNodeValues().GetValues()[0]}");
        }
 
        
-       
-
-
-
        Groot.Tree legvi = new Groot.Tree();
        legvi.AddNode(1, "1-1");
        legvi.AddNode(1, "1-2");
@@ -61,12 +52,8 @@ class Program
            {
                // Console.WriteLine($" == >>>>>>> {be} ");
            }
-           
            // Console.WriteLine($"{le.GetName()} == >> {le.GetNodeValues().GetValues()[0]} ");
-           
        }
-
-
 
        int inz = 5;
        string ins = "5";

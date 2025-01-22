@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SLU6RJu21P4=",
+  "dgSpecHash": "3ULhl5Z556Y=",
   "success": true,
-  "projectFilePath": "/home/bali/RiderProjects/GrootPro/GrootProject/groot_pr.csproj",
+  "projectFilePath": "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj",
   "expectedPackageFiles": [
     "/home/bali/.nuget/packages/passwordgenerator/2.1.0/passwordgenerator.2.1.0.nupkg.sha512"
   ],

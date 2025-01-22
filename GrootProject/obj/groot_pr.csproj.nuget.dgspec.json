@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/bali/RiderProjects/GrootPro/GrootProject/groot_pr.csproj": {}
+    "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj": {}
   },
   "projects": {
-    "/home/bali/RiderProjects/GrootPro/GrootProject/groot_pr.csproj": {
+    "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bali/RiderProjects/GrootPro/GrootProject/groot_pr.csproj",
+        "projectUniqueName": "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj",
         "projectName": "groot_pr",
-        "projectPath": "/home/bali/RiderProjects/GrootPro/GrootProject/groot_pr.csproj",
+        "projectPath": "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj",
         "packagesPath": "/home/bali/.nuget/packages/",
-        "outputPath": "/home/bali/RiderProjects/GrootPro/GrootProject/obj/",
+        "outputPath": "/home/bali/RiderProjects/Groot/GrootProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bali/.nuget/NuGet/NuGet.Config"

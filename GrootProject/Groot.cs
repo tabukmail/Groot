@@ -12,7 +12,7 @@ namespace Groot;
 // 6. name automation according parents last digit
 // 7. create PrintTree() method after GetTree() method
 // 8. AddValueToNode() create method to add value directly from tree
-// DONE - 9. GetValueOf() create method to get value directly from tree by value index
+// DONE - 9. GetValueOf() create method to get value directly from tree by value index.
 // 10. options to export(): XLSX, CSV, XML, JSON or DB option 
 
 
@@ -70,7 +70,7 @@ public class Groot : IComparable
         return this._leftKey.CompareTo(incomingNode._leftKey); 
     } 
         
-        /// ===================================== nested class Tree ============================
+        /// ===================================== nested class Tree ==============================
         public class Tree 
         {
                 private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root")];  

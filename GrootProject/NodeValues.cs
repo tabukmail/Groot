@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Groot;
@@ -15,8 +17,10 @@ public class NodeValues
     
     
     private List<int> _values = new List<int>(5){0,0,0,0,0};
+    private ArrayList _types = new ArrayList(5){0,0,0,0,0};
     
-    
+    // object obj1 = String; //type experimental 
+
     public  List<int> GetValues()
     {
         return _values;

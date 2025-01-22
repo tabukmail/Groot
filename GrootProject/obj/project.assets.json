@@ -33,19 +33,19 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "/home/bali/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/root/groot/GrootProject/groot_pr.csproj",
+      "projectUniqueName": "/home/bali/RiderProjects/GrootPro/GrootProject/groot_pr.csproj",
       "projectName": "groot_pr",
-      "projectPath": "/root/groot/GrootProject/groot_pr.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/root/groot/GrootProject/obj/",
+      "projectPath": "/home/bali/RiderProjects/GrootPro/GrootProject/groot_pr.csproj",
+      "packagesPath": "/home/bali/.nuget/packages/",
+      "outputPath": "/home/bali/RiderProjects/GrootPro/GrootProject/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/home/bali/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -96,7 +96,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

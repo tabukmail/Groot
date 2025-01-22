@@ -64,7 +64,7 @@ class Program
        Console.WriteLine(ins.GetTypeCode());
 
 
-       Console.WriteLine(peach.GetValuesOf("1-2-2"));
+       Console.WriteLine(peach.GetValuesOf("1-2-2", 0));
 
       
 

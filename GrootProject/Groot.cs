@@ -12,7 +12,8 @@ namespace Groot;
 // 6. name automation according parents last digit
 // 7. create PrintTree() method after GetTree() method
 // 8. AddValueToNode() create method to add value directly from tree
-// 8. options to export(): XLSX, CSV, XML, JSON or DB option 
+// DONE - 9. GetValueOf() create method to get value directly from tree by value index
+// 10. options to export(): XLSX, CSV, XML, JSON or DB option 
 
 
 
@@ -133,14 +134,14 @@ public class Groot : IComparable
                     //some code to add node value directly from tree
                 }
                 
-                public object GetValuesOf(string nodeName)
+                public object GetValuesOf(string nodeName, int valueIndex)
                 {
                     var value = 0;
                     foreach (Groot node in _tree)
                     {
                         if (node.GetName() == nodeName)
                         {
-                            value = node.GetNodeValues().GetValues()[0];
+                            value = node.GetNodeValues().GetValues()[valueIndex];
                             //Console.WriteLine(value);
                         }
                         

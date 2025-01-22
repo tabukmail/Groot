@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("groot_pr")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a8ed6bca59092aed0026c0c9f697642fe6932e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+923a2cb03be69afab6dffb077e5f47c37c7d6a8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("groot_pr")]
 [assembly: System.Reflection.AssemblyTitleAttribute("groot_pr")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

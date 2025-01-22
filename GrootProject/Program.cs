@@ -59,10 +59,10 @@ class Program
 
            foreach (var be in le.GetNodeValues().GetValues())
            {
-                Console.WriteLine($" == >>>>>>> {be} ");
+               // Console.WriteLine($" == >>>>>>> {be} ");
            }
            
-           Console.WriteLine($"{le.GetName()} == >> {le.GetNodeValues().GetValues()[0]} ");
+           // Console.WriteLine($"{le.GetName()} == >> {le.GetNodeValues().GetValues()[0]} ");
            
        }
 
@@ -77,10 +77,7 @@ class Program
 
 
 
-        var psw =  new Password();
-        var password = psw.Next();
-
-        Console.WriteLine($"{password}");
+        
 
 
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 
+
 namespace Groot;
 
 //TODO 
@@ -147,7 +148,7 @@ public class Groot : IComparable
                         
                     }
 
-                    return value;
+                    return value!;
                 }
                 
                 // public object GetValuesOfNode(string nodeName)
@@ -165,15 +166,23 @@ public class Groot : IComparable
                 //     
                 // }
 
-                public object PrintAllValuesOfNode(string nodeName)
+                public string PrintAllValuesOfNode(string nodeName)
                 {
-                    var value = "";
+                    string? value = "";
                     foreach (Groot node in _tree)
                     {
                         if (node.GetName() == nodeName)
                         {
-                            value = string.Join(", ", node.GetNodeValues().GetValues());
-                            
+                              var nodeValues = node.GetNodeValues()?.GetValues();
+                              if (nodeValues != null)
+                                {
+                                    value = string.Join(", ", nodeValues.ToArray().Select(item => item.ToString()));
+                                }
+                              else
+                                {
+                                    value = "No values found for this node.";
+                                 }
+                        break; 
                         }
                         
                     }

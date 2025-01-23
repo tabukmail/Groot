@@ -17,7 +17,7 @@ public class NodeValues
     
     
     private ArrayList _values = new ArrayList (5){0,0,0,0,0};
-    private ArrayList _types = new ArrayList(5){0,0,0,0,0};
+    //private ArrayList _types = new ArrayList(5){0,0,0,0,0};
     
     
     

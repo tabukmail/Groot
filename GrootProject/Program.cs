@@ -23,14 +23,14 @@ class Program
        peach.AddValueToNode("1-2-2", 0, 887);
        
        var nodara = (Groot)peach.GetTree()[8]!;
-       nodara.GetNodeValues().SetValues(0,2056);
+       nodara.GetNodeValues().SetValueByIndex(0,2056);
        
        
        foreach (Groot element in peach.GetTree())
        {
            if (element.GetId() == 6 )
            {
-               element.GetNodeValues().SetValues(0, 68);
+               element.GetNodeValues().SetValueByIndex(0, 68);
                int nodeval = (int)element.GetNodeValues().GetValues()[0]!;
                
                // Console.WriteLine($" nod val {nodeval}");
@@ -48,7 +48,7 @@ class Program
        {
            if (le.GetId() == 3)
            {
-               le.GetNodeValues().SetValues(0,255);
+               le.GetNodeValues().SetValueByIndex(0,255);
            }
 
            foreach (var be in le.GetNodeValues().GetValues())
@@ -72,8 +72,11 @@ class Program
        // object obj1 = typeof(string); //type experimental 
        // Console.WriteLine(obj1.GetType());
 
-
-
+       
+        peach.SetUpNodeValueColumn("account_name", ValueColumnType.String);
+        peach.SetUpNodeValueColumn("debit_acc", ValueColumnType.Integer);
+        
+        Console.WriteLine(peach.GetNodeValueColumns());
 
     }
 }

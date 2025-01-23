@@ -42,6 +42,7 @@ public class Groot : IComparable
     public int GetRight_Key() => _rightKey;
     private void setRight_Key(int key) => _rightKey = key;
     public NodeValues GetNodeValues() => _nodeValues;
+  
    
 
 
@@ -75,6 +76,11 @@ public class Groot : IComparable
         public class Tree 
         {
                 private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root")];  
+                private NodeValues _nodeValues= new NodeValues();
+                
+                
+                
+                
                 
                 public  ArrayList GetTree()
                 {
@@ -145,9 +151,6 @@ public class Groot : IComparable
 
                 }
                 
-                
-                
-                
                 public object GetValueOfNode(string nodeName, int valueIndex)
                 {
                     object? value = 0;
@@ -164,7 +167,6 @@ public class Groot : IComparable
                     return value!;
                 }
                 
-            
                 public string PrintAllValuesOfNode(string nodeName)
                 {
                     string? value = "";
@@ -175,7 +177,7 @@ public class Groot : IComparable
                               var nodeValues = node.GetNodeValues()?.GetValues();
                               if (nodeValues != null)
                               {
-                                  value = string.Join(", ", nodeValues.ToArray().Select(item => item.ToString()));
+                                  value = string.Join(", ", nodeValues.ToArray().Select(item => item?.ToString()));
                               }
                               else
                               {
@@ -189,9 +191,20 @@ public class Groot : IComparable
                     return value;
                 }
                
+                public void SetUpNodeValueColumn(string name, ValueColumnType valueColumnType)
+                {
+                    
+                    _nodeValues.SetValueType(name, valueColumnType);
+                    
+                }
                 
-                
-                
+                public string GetNodeValueColumns()
+                {
+                    
+                    string data = string.Join(", ", _nodeValues.GetValueTypes().Select(kvp => $"{kvp.Key}: {kvp.Value}"));
+                    return   data  ;
+
+                }
                 
                 
                 

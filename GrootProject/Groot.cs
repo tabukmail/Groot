@@ -46,7 +46,7 @@ public class Groot : IComparable
    
 
 
-    private Groot(int parentId, int id, int leftKey, int rightKey, int level, string name)
+    private Groot(int parentId, int id, int leftKey, int rightKey, int level, string name, NodeValues nodeValues)
     {
         _parentId = parentId;
         _id = id;
@@ -54,6 +54,7 @@ public class Groot : IComparable
         _rightKey = rightKey;
         _level = level;
         _name = name;
+        _nodeValues = nodeValues;
     }
 
     
@@ -75,7 +76,7 @@ public class Groot : IComparable
         /// ===================================== nested class Tree ==============================
         public class Tree 
         {
-                private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root")];  
+                private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root", new NodeValues())];  
                 private NodeValues _nodeValues= new NodeValues();
                 
                 
@@ -129,7 +130,7 @@ public class Groot : IComparable
                         }
                     }
                    
-                    _tree.Add (new Groot(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName));
+                    _tree.Add (new Groot(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName, new NodeValues()));
                     
                    
                    _tree.Sort();

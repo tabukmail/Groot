@@ -16,7 +16,7 @@ public class NodeValues
     //xxx
     
     
-    private ArrayList _values = new ArrayList (1){0};
+    private ArrayList _values = new ArrayList (1){4};
     private Dictionary<string, ValueColumnType> _types = new Dictionary<string, ValueColumnType>(){};
     
     

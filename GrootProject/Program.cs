@@ -20,7 +20,7 @@ class Program
 
        
        peach.AddNode(3,"dadad");
-       
+       peach.AddValueToNode("1-2-2", 0, 887);
        
        var nodara = (Groot)peach.GetTree()[8]!;
        nodara.GetNodeValues().SetValues(0,2056);
@@ -66,7 +66,8 @@ class Program
 
       Console.WriteLine(peach.GetValueOfNode("1-2-2", 0));
       Console.WriteLine(peach.PrintAllValuesOfNode("1-2-2"));
-
+      Console.WriteLine(peach.PrintAllValuesOfNode("1-3"));
+      
 
        // object obj1 = typeof(string); //type experimental 
        // Console.WriteLine(obj1.GetType());

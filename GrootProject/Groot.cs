@@ -12,7 +12,7 @@ namespace Groot;
 // 5. options to plug-in data source  : JSON or DB option 
 // 6. name automation according parents last digit
 // 7. create PrintTree() method after GetTree() method
-// 8. AddValueToNode() create method to add value directly from tree
+// DONE - 8. AddValueToNode() create method to add value directly from tree
 // DONE - 9. GetValueOf() create method to get value directly from tree by value index.
 // 10. options to export(): XLSX, CSV, XML, JSON or DB option 
 
@@ -130,10 +130,23 @@ public class Groot : IComparable
                         
                    }
 
-                public void AddValueToNode(int nodeIndex, int nodeValueIndex, int value)
+                public void AddValueToNode(string nodeName, int valueIndex, int value)
                 {
-                    //some code to add node value directly from tree
+                    
+                    foreach (Groot node in _tree)
+                    {
+                        if (node.GetName() == nodeName)
+                        {
+                            node.GetNodeValues().GetValues().Add(value);
+                            //Console.WriteLine(value);
+                        }
+                        
+                    }
+
                 }
+                
+                
+                
                 
                 public object GetValueOfNode(string nodeName, int valueIndex)
                 {
@@ -151,21 +164,7 @@ public class Groot : IComparable
                     return value!;
                 }
                 
-                // public object GetValuesOfNode(string nodeName)
-                // {
-                //     ArrayList values = new ArrayList();
-                //     foreach (Groot node in _tree)
-                //     {
-                //         if (node.GetName() == nodeName)
-                //         {
-                //             values = node.GetNodeValues().GetValues().CopyTo(values);
-                //
-                //         }
-                //         
-                //     }
-                //     
-                // }
-
+            
                 public string PrintAllValuesOfNode(string nodeName)
                 {
                     string? value = "";
@@ -175,13 +174,13 @@ public class Groot : IComparable
                         {
                               var nodeValues = node.GetNodeValues()?.GetValues();
                               if (nodeValues != null)
-                                {
-                                    value = string.Join(", ", nodeValues.ToArray().Select(item => item.ToString()));
-                                }
+                              {
+                                  value = string.Join(", ", nodeValues.ToArray().Select(item => item.ToString()));
+                              }
                               else
-                                {
-                                    value = "No values found for this node.";
-                                 }
+                              {
+                                  value = "No values found for this node.";
+                              }
                         break; 
                         }
                         

@@ -44,7 +44,7 @@ public class Groot : IComparable
     private void setLeft_Key(int key) => _leftKey = key;
     public int GetRight_Key() => _rightKey;
     private void setRight_Key(int key) => _rightKey = key;
-    public NodeValues GetNodeDataSettings() => _nodeValues;
+    public NodeValues GetNodeData() => _nodeValues;
     public NodeValueSettings GetNodeValueSettings() => _nodeValueSettings;
   
    
@@ -144,15 +144,20 @@ public class Groot : IComparable
                         
                    }
 
-                public void AddValueToSpecificNode(string nodeName, int valueIndex, int value)
+                public void AddValueToSpecificNode(string nodeName, int nodeValueIndex, int value)
                 {
                     
                     foreach (Groot node in _tree)
                     {
-                        if (node.GetName() == nodeName)
+                        if (node.GetName() == nodeName && node.GetNodeData().GetValues().Count >= 0)
                         {
-                            node.GetNodeDataSettings().GetValues().Add(value);
-                            //Console.WriteLine(value);
+                            node.GetNodeData().GetValues().Add(value);
+                            break;
+                        }
+                        else if (node.GetName() == nodeName)
+                        {
+                            node.GetNodeData().GetValues()[nodeValueIndex] = value;
+                            break;
                         }
                         
                     }
@@ -166,7 +171,7 @@ public class Groot : IComparable
                     {
                         if (node.GetName() == nodeName)
                         {
-                            value = node.GetNodeDataSettings().GetValues()[valueIndex];
+                            value = node.GetNodeData().GetValues()[valueIndex];
                             //Console.WriteLine(value);
                         }
                         
@@ -182,7 +187,7 @@ public class Groot : IComparable
                     {
                         if (node.GetName() == nodeName)
                         {
-                              var nodeValues = node.GetNodeDataSettings()?.GetValues();
+                              var nodeValues = node.GetNodeData()?.GetValues();
                               if (nodeValues != null)
                               {
                                   value = string.Join(", ", nodeValues.ToArray().Select(item => item?.ToString()));

@@ -16,7 +16,7 @@ public class NodeValues
     //xxx
     
     
-    private ArrayList _nodeData = new ArrayList (1){4};
+    private ArrayList _nodeData = new ArrayList (){};
     
     
 

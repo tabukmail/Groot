@@ -30,6 +30,9 @@ public class Groot : IComparable
     private int _level;
     private string _name;
     private NodeValues _nodeValues= new NodeValues();
+    private static NodeValueSettings _nodeValueSettings = new NodeValueSettings();
+    
+    
     
 
     public int GetParentId() => _parentId;
@@ -41,7 +44,8 @@ public class Groot : IComparable
     private void setLeft_Key(int key) => _leftKey = key;
     public int GetRight_Key() => _rightKey;
     private void setRight_Key(int key) => _rightKey = key;
-    public NodeValues GetNodeValues() => _nodeValues;
+    public NodeValues GetNodeDataSettings() => _nodeValues;
+    public NodeValueSettings GetNodeValueSettings() => _nodeValueSettings;
   
    
 
@@ -56,7 +60,6 @@ public class Groot : IComparable
         _name = name;
         _nodeValues = nodeValues;
     }
-
     
     private Groot(int parentId, string name)
     {
@@ -64,7 +67,15 @@ public class Groot : IComparable
         _name = name;
     }
 
-   
+    private Groot(int parentId, int id, int leftKey, int rightKey, int level, string name)
+    {
+        _parentId = parentId;
+        _id = id;
+        _leftKey = leftKey;
+        _rightKey = rightKey;
+        _level = level;
+        _name = name;
+    }
 
 
     public int CompareTo(object? incomingobject) 
@@ -76,18 +87,14 @@ public class Groot : IComparable
         /// ===================================== nested class Tree ==============================
         public class Tree 
         {
-                private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root", new NodeValues())];  
-                private NodeValues _nodeValues= new NodeValues();
                 
+               
+                private readonly ArrayList _tree = [new Groot(0, 1, 1, 2, 0, "root")];
+
                 
+
+                public ArrayList GetTree() => _tree;
                 
-                
-                
-                public  ArrayList GetTree()
-                {
-                    return _tree;
-                }
-            
                 public void AddNode(int parentId, string newNodeName)
                 {
                     
@@ -137,14 +144,14 @@ public class Groot : IComparable
                         
                    }
 
-                public void AddValueToNode(string nodeName, int valueIndex, int value)
+                public void AddValueToSpecificNode(string nodeName, int valueIndex, int value)
                 {
                     
                     foreach (Groot node in _tree)
                     {
                         if (node.GetName() == nodeName)
                         {
-                            node.GetNodeValues().GetValues().Add(value);
+                            node.GetNodeDataSettings().GetValues().Add(value);
                             //Console.WriteLine(value);
                         }
                         
@@ -152,14 +159,14 @@ public class Groot : IComparable
 
                 }
                 
-                public object GetValueOfNode(string nodeName, int valueIndex)
+                public object GetValueOfSpecificNode(string nodeName, int valueIndex)
                 {
                     object? value = 0;
                     foreach (Groot node in _tree)
                     {
                         if (node.GetName() == nodeName)
                         {
-                            value = node.GetNodeValues().GetValues()[valueIndex];
+                            value = node.GetNodeDataSettings().GetValues()[valueIndex];
                             //Console.WriteLine(value);
                         }
                         
@@ -175,7 +182,7 @@ public class Groot : IComparable
                     {
                         if (node.GetName() == nodeName)
                         {
-                              var nodeValues = node.GetNodeValues()?.GetValues();
+                              var nodeValues = node.GetNodeDataSettings()?.GetValues();
                               if (nodeValues != null)
                               {
                                   value = string.Join(", ", nodeValues.ToArray().Select(item => item?.ToString()));
@@ -194,17 +201,25 @@ public class Groot : IComparable
                
                 public void SetUpNodeValueColumn(string name, ValueColumnType valueColumnType)
                 {
-                    
-                    _nodeValues.SetValueType(name, valueColumnType);
-                    
+                   _nodeValueSettings.SetValueType(name, valueColumnType);
                 }
                 
                 public string GetNodeValueColumns()
-                {
+                { 
                     
-                    string data = string.Join(", ", _nodeValues.GetValueTypes().Select(kvp => $"{kvp.Key}: {kvp.Value}"));
-                    return   data  ;
-
+                    string data = string.Join(", ", _nodeValueSettings.GetValueTypes().Select(kvp => $"{kvp.Key}: {kvp.Value}"));
+                    return data  ;
+                
+                }
+                
+                public void PrintTree()
+                {
+                    foreach (Groot node in _tree)
+                    {
+                        Console.WriteLine(string.Join(", ", node._parentId, node._id, node._leftKey, node._rightKey,
+                            node._name, " == > ", PrintAllValuesOfNode(node._name)));
+                    }
+                    
                 }
                 
                 

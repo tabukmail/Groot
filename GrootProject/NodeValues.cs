@@ -16,37 +16,21 @@ public class NodeValues
     //xxx
     
     
-    private ArrayList _values = new ArrayList (1){4};
-    private Dictionary<string, ValueColumnType> _types = new Dictionary<string, ValueColumnType>(){};
-    
-    
+    private ArrayList _nodeData = new ArrayList (1){4};
     
     
 
     public  ArrayList GetValues()
     {
-        return _values;
+        return _nodeData;
     }
     
     public void SetValueByIndex(int index, int value)
     {
-        _values[index] = value;
+        _nodeData[index] = value;
     }
     
-    public  Dictionary<string, ValueColumnType> GetTypes()
-    {
-        return _types;
-    }
-    
-    public void SetValueType(string name, ValueColumnType type)
-    {
-        _types.Add(name, type);
-    }
-    
-    public Dictionary<string,ValueColumnType> GetValueTypes()
-    {
-        return _types;
-    }
+   
     
     
     

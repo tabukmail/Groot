@@ -11,14 +11,14 @@ public class NodeValueSettings
         return _nodeDataTypes;
     }
     
-    public void SetValueType(string name, ValueColumnType type)
-    {
-        _nodeDataTypes.Add(name, type);
-    }
-    
     public Dictionary<string,ValueColumnType> GetValueTypes()
     {
         return _nodeDataTypes;
+    }
+    
+    public void SetValueType(string name, ValueColumnType type)
+    {
+        _nodeDataTypes.Add(name, type);
     }
     
     

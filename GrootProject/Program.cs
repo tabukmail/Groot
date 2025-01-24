@@ -27,7 +27,20 @@ class Program
         var sum = (int)(peach.GetValueOfSpecificNode("root", 0)) + (int)(peach.GetValueOfSpecificNode("Bonjour", 0));
         Console.WriteLine();
         Console.WriteLine(sum);
-        
+
+        foreach (Groot node in peach.GetTree())
+        {
+            int indexToCheck = 3;
+
+            if (node.GetNodeData().GetValues().Count is 0 || indexToCheck >= node.GetNodeData().GetValues().Count)
+            {
+                Console.WriteLine("bliad ");
+            }
+            else
+            {
+                Console.WriteLine($"{node.GetNodeData().GetValues()[indexToCheck]}");
+            }
+        }
 
 
 

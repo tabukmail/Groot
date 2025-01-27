@@ -3,6 +3,7 @@ using System.Collections;
 using System.Dynamic;
 
 
+
 namespace Groot;
 
 //TODO 
@@ -152,8 +153,9 @@ public class Node : IComparable
                         if (node.GetName() == nodeName && nodeValueIndex > node.GetNodeData().GetNodeValues().Count -1)
 
                         {
-                           
+                           var ddd = nodeValueIndex - (node.GetNodeData().GetNodeValues().Count-1) == 1;
                                     node.GetNodeData().GetNodeValues().Add(value);
+                                    Console.WriteLine(ddd);
                                     break;
                                
                         }

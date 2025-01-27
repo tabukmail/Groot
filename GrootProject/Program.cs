@@ -21,7 +21,6 @@ class Program
         peach.AddValueToSpecificNode("Hello",2,110);
         
         
-        
         peach.SetUpNodeValueColumn("acc_name", ValueColumnType.String);        
         Console.WriteLine(peach.GetNodeValueColumns());
         
@@ -31,6 +30,8 @@ class Program
         Console.WriteLine();
         Console.WriteLine($"This is sum {sum}");
 
+        
+        
         //check if the value exists in a specific column index NOT in ROW 
         foreach (Node node in peach.GetTree())
         {

@@ -153,7 +153,7 @@ public class Node : IComparable
                             node.GetNodeData().GetValues().Add(value);
                             break;
                         }
-                        else if (node.GetName() == nodeName && node.GetNodeData().GetValues().Count == nodeValueIndex)
+                        else if (node.GetName() == nodeName && node.GetNodeData().GetValues().Count-1 == nodeValueIndex)
                         {
                             node.GetNodeData().GetValues()[nodeValueIndex] = value;
                             Console.WriteLine("dadaaaa");

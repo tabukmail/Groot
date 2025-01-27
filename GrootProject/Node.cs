@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Dynamic;
 
 
 namespace Groot;
@@ -147,19 +148,23 @@ public class Node : IComparable
                 {
                     foreach (Node node in _tree)
                     {
-                        if (node.GetName() == nodeName && node.GetNodeData().GetValues().Count >= 0 && nodeValueIndex > node.GetNodeData().GetValues().Count-1 )
+                        // if index value is NOT exists
+                        if (node.GetName() == nodeName && nodeValueIndex > node.GetNodeData().GetNodeValues().Count -1)
 
                         {
-                            node.GetNodeData().GetValues().Add(value);
-                            break;
-                        }
-                        else if (node.GetName() == nodeName && node.GetNodeData().GetValues().Count-1 == nodeValueIndex)
-                        {
-                            node.GetNodeData().GetValues()[nodeValueIndex] = value;
-                            Console.WriteLine("dadaaaa");
-                            break;
+                           
+                                    node.GetNodeData().GetNodeValues().Add(value);
+                                    break;
+                               
                         }
                         
+                        // if index value is exists
+                        if (node.GetName() == nodeName && node.GetNodeData().GetNodeValues().Count-1 == nodeValueIndex)
+                        {
+                            node.GetNodeData().GetNodeValues()[nodeValueIndex] = value;
+                            break;
+                        }
+
                     }
 
                 }
@@ -169,12 +174,16 @@ public class Node : IComparable
                     object? value = 0;
                     foreach (Node node in _tree)
                     {
-                        if (node.GetName() == nodeName)
+                        if (node.GetName() == nodeName && valueIndex <= node.GetNodeData().GetNodeValues().Count-1)
                         {
-                            value = node.GetNodeData().GetValues()[valueIndex];
+                            value = node.GetNodeData().GetNodeValues()[valueIndex];
                             //Console.WriteLine(value);
+                        } else if ((node.GetName() == nodeName && valueIndex > node.GetNodeData().GetNodeValues().Count-1))
+                        {
+                            Console.WriteLine("ther is no value on this index");
+                            value = false;
                         }
-                        
+                       
                     }
 
                     return value!;
@@ -187,7 +196,7 @@ public class Node : IComparable
                     {
                         if (node.GetName() == nodeName)
                         {
-                              var nodeValues = node.GetNodeData()?.GetValues();
+                              var nodeValues = node.GetNodeData()?.GetNodeValues();
                               if (nodeValues != null)
                               {
                                   value = string.Join(", ", nodeValues.ToArray().Select(item => item?.ToString()));
@@ -200,10 +209,33 @@ public class Node : IComparable
                         }
                         
                     }
-
+                    
                     return value;
                 }
                
+                public ArrayList GetAllValuesOfNode(string nodeName)
+                {
+                    ArrayList values = new ArrayList();
+                    foreach (Node node in _tree)
+                    {
+                        if (node.GetName() == nodeName)
+                        {
+                            var nodeValues = node.GetNodeData()?.GetNodeValues();
+                            if (nodeValues != null)
+                            {
+                                values = nodeValues;
+                            }
+                            else
+                            {
+                                Console.WriteLine("No values found for this node.");
+                            }
+                        }
+                        
+                    }
+
+                    return values;
+                }
+                
                 public void SetUpNodeValueColumn(string name, ValueColumnType valueColumnType)
                 {
                    _nodeValueSettings.SetValueType(name, valueColumnType);

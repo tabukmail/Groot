@@ -20,7 +20,7 @@ public class NodeValues
     
     
 
-    public  ArrayList GetValues()
+    public  ArrayList GetNodeValues()
     {
         return _nodeData;
     }

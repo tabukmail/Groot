@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using PasswordGenerator;
 
-namespace Groot;
+namespace Treeton;
 
 class Program
 {
@@ -22,7 +22,8 @@ class Program
         peach.AddValueToSpecificNode("Bonjour",1,64);
         peach.AddValueToSpecificNode("Bonjour",1,128);
         peach.AddValueToSpecificNode("Bonjour",1,98);
-        peach.AddValueToSpecificNode("Hello",2,110);
+        peach.AddValueToSpecificNode("Hello",1,110);
+        peach.AddValueToSpecificNode("Hello",3,130);
         
         
         peach.SetUpNodeValueColumn("acc_name", ValueColumnType.String);        

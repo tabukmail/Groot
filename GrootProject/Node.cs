@@ -4,7 +4,7 @@ using System.Dynamic;
 
 
 
-namespace Groot;
+namespace Treeton;
 
 //TODO 
 // 1. DeleteNode() - option to lock node from deletion if it hes NodeValues
@@ -151,12 +151,20 @@ public class Node : IComparable
                     {
                         // if index value is NOT exists
                         if (node.GetName() == nodeName && nodeValueIndex > node.GetNodeData().GetNodeValues().Count -1)
-
                         {
-                           var ddd = nodeValueIndex - (node.GetNodeData().GetNodeValues().Count-1) == 1;
-                                    node.GetNodeData().GetNodeValues().Add(value);
-                                    Console.WriteLine(ddd);
-                                    break;
+                           var condition = nodeValueIndex - (node.GetNodeData().GetNodeValues().Count-1) != 1;
+                           if (condition)
+                           {
+                               for (int i = node.GetNodeData().GetNodeValues().Count ; i < nodeValueIndex; i++)
+                               {
+                                   node.GetNodeData().GetNodeValues().Add(0);
+                                   //Console.WriteLine(condition);
+                               }
+                               
+                           }        
+                           node.GetNodeData().GetNodeValues().Add(value);
+                           
+                           break;
                                
                         }
                         

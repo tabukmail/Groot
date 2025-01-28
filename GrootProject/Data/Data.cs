@@ -1,4 +1,4 @@
-namespace Groot.Data;
+namespace Treeton.Data;
 
 public class Data
 {

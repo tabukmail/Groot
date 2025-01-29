@@ -90,10 +90,8 @@ public class Node : IComparable
         public class Root 
         {
                 
-               
                 private readonly ArrayList _tree = [new Node(0, 1, 1, 2, 0, "root")];
 
-                
                 public ArrayList GetTree() => _tree;
                 
                 public void AddNode(int parentId, string newNodeName)
@@ -174,9 +172,44 @@ public class Node : IComparable
                             node.GetNodeData().GetNodeValues()[nodeValueIndex] = value;
                             break;
                         }
-
                     }
-
+                }
+                
+                public void AddValueToSpecificNode2(string nodeName, string nodeValueColumnName, object value)
+                {
+                    int nodeValueIndex = DictionaryIndexFinder(nodeValueColumnName);
+                    //Console.WriteLine($":: -> {nodeValueIndex } ++  {nodeValueColumnName}");
+                    
+                    
+                    foreach (Node node in _tree)
+                    {
+                        // if index value is NOT exists
+                        if (node.GetName() == nodeName && nodeValueIndex > node.GetNodeData().GetNodeValues().Count -1)
+                        {
+                            var condition = nodeValueIndex - (node.GetNodeData().GetNodeValues().Count-1) != 1;
+                            if (condition)
+                            {
+                                for (int i = node.GetNodeData().GetNodeValues().Count ; i < nodeValueIndex; i++)
+                                {
+                                    node.GetNodeData().GetNodeValues().Add(0);
+                                    //Console.WriteLine(condition);
+                                }
+                               
+                            }        
+                            node.GetNodeData().GetNodeValues().Add(value);
+                           
+                            break;
+                               
+                        }
+                        
+                        // if index value is exists
+                        if (node.GetName() == nodeName && node.GetNodeData().GetNodeValues().Count-1 > nodeValueIndex)
+                        {
+                            node.GetNodeData().GetNodeValues()[nodeValueIndex] = value;
+                            //Console.WriteLine($":: -> {node.GetNodeData().GetNodeValues()[nodeValueIndex]}");
+                            break;
+                        }
+                    }
                 }
                 
                 public object GetValueOfSpecificNode(string nodeName, int valueIndex)
@@ -269,7 +302,27 @@ public class Node : IComparable
                     
                 }
                 
-                
+                private  int DictionaryIndexFinder(string key)
+                {
+                    int counter = 0;
+                    if (GetNodeValueColumns().ContainsKey(key) is false)
+                    {
+                        counter = -1;
+                        
+                    }else
+                    { 
+                    foreach (var data in GetNodeValueColumns())
+                    {
+                        if (data.Key.Equals(key))
+                        {
+                           break;
+                        }
+                        counter++;
+                    }
+                    }
+                    
+                    return counter;
+                }
                 
                 
         }

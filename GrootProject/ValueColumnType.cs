@@ -3,7 +3,7 @@ namespace Treeton;
 public enum ValueColumnType
 {
     String,
-    Integer,
+    Int32,
     Float,
     Double,
     Boolean,

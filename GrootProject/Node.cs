@@ -145,7 +145,7 @@ public class Node : IComparable
                         
                    }
 
-                public void AddValueToSpecificNode(string nodeName, int nodeValueIndex, int value)
+                public void AddValueToSpecificNode(string nodeName, int nodeValueIndex, object value)
                 {
                     foreach (Node node in _tree)
                     {
@@ -251,11 +251,11 @@ public class Node : IComparable
                    _nodeValueSettings.SetValueType(name, valueColumnType);
                 }
                 
-                public string GetNodeValueColumns()
+                public Dictionary<string,ValueColumnType> GetNodeValueColumns()
                 { 
                     
-                    string data = string.Join(", ", _nodeValueSettings.GetValueTypes().Select(kvp => $"{kvp.Key}: {kvp.Value}"));
-                    return data  ;
+                    //string data = string.Join(", ", _nodeValueSettings.GetValueTypes().Select(kvp => $"{kvp.Key}: {kvp.Value}"));
+                    return _nodeValueSettings.GetValueTypes()  ;
                 
                 }
                 

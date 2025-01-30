@@ -15,9 +15,9 @@ class Program
         peach.AddNode(2, "Tinto");
         
         peach.SetUpNodeValueColumn("acc_name", ValueColumnType.String); 
-        peach.SetUpNodeValueColumn("debit", ValueColumnType.Int32);
-        peach.SetUpNodeValueColumn("credit", ValueColumnType.Int32);
-        peach.SetUpNodeValueColumn("sos", ValueColumnType.Int32);
+        peach.SetUpNodeValueColumn("debit", ValueColumnType.Integer);
+        peach.SetUpNodeValueColumn("credit", ValueColumnType.Integer);
+        peach.SetUpNodeValueColumn("sos", ValueColumnType.Integer);
         
         peach.AddValueToSpecificNode2("root","acc_name","Bank");
         peach.AddValueToSpecificNode2("root","acc_name","Bank2");
@@ -32,20 +32,20 @@ class Program
         peach.AddValueToSpecificNode2("Bonjour","sos",1024);
 
 
-
-        bool valueTypeCheck = false;
-        switch (peach.GetNodeValueColumns()["acc_name"])
+        var input = 10;
+        bool valueColumnTypeCheck = false;
+        switch (peach.GetNodeValueColumns()["debit"])
         {
             case ValueColumnType.String: 
-                valueTypeCheck = peach.GetValueOfSpecificNode2("root", "acc_name") is string;
+                valueColumnTypeCheck = input is string;
                 break;
-            case ValueColumnType.Float:
-                Console.WriteLine("its float");
+            case ValueColumnType.Integer:
+                valueColumnTypeCheck = input is int;
                 break;
         }
         
         
-        Console.WriteLine(valueTypeCheck);
+        Console.WriteLine(valueColumnTypeCheck);
        
         Console.WriteLine(string.Join(", ", peach.GetNodeValueColumns().Keys), peach.GetNodeValueColumns().Values);
         peach.PrintTree();

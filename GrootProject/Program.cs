@@ -19,44 +19,35 @@ class Program
         peach.SetUpNodeValueColumn("credit", ValueColumnType.Int32);
         peach.SetUpNodeValueColumn("sos", ValueColumnType.Int32);
         
-        peach.AddValueToSpecificNode("root",0,8);
-        peach.AddValueToSpecificNode("root",0,12);
-        peach.AddValueToSpecificNode("root",0,10);
-        peach.AddValueToSpecificNode("root",1,11);
-        peach.AddValueToSpecificNode("root",4,14);
-        peach.AddValueToSpecificNode("Bonjour",0,20);
-        peach.AddValueToSpecificNode("Bonjour",0,28);
-        peach.AddValueToSpecificNode("Bonjour",1,87);
-        peach.AddValueToSpecificNode("Bonjour",1,64);
-        peach.AddValueToSpecificNode("Bonjour",1,128);
-        peach.AddValueToSpecificNode("Bonjour",1,98);
-        peach.AddValueToSpecificNode("Hello",1,300);
-        peach.AddValueToSpecificNode("Hello",3,887);
+        peach.AddValueToSpecificNode2("root","acc_name","Bank");
+        peach.AddValueToSpecificNode2("root","acc_name","Bank2");
+        peach.AddValueToSpecificNode2("Hello","acc_name","Cash");
+        peach.AddValueToSpecificNode2("Hello","credit",54);
+        peach.AddValueToSpecificNode2("root","debit",102);
+        peach.AddValueToSpecificNode2("root","debit",103);
         peach.AddValueToSpecificNode2("Tinto","debit",1050);
         peach.AddValueToSpecificNode2("Tinto","debit",1777);
         peach.AddValueToSpecificNode2("Tinto","acc_name",888);
-        peach.AddValueToSpecificNode2("Hello","credit",777);
-        
-        
-        
-        
-        Console.WriteLine(peach.GetNodeValueColumns()["acc_name"].ToString());
-        Console.WriteLine(peach.GetValueOfSpecificNode("Hello", 1).GetType().ToString());
-        Console.WriteLine(peach.GetValueOfSpecificNode("Hello", 1) is decimal);
+        peach.AddValueToSpecificNode2("Tinto","acc_name",999);
+        peach.AddValueToSpecificNode2("Bonjour","sos",1024);
 
-        
+
+
+        bool valueTypeCheck = false;
         switch (peach.GetNodeValueColumns()["acc_name"])
         {
             case ValueColumnType.String: 
-                Console.WriteLine("its string");
+                valueTypeCheck = peach.GetValueOfSpecificNode2("root", "acc_name") is string;
                 break;
             case ValueColumnType.Float:
                 Console.WriteLine("its float");
                 break;
         }
-
         
         
+        Console.WriteLine(valueTypeCheck);
+       
+        Console.WriteLine(string.Join(", ", peach.GetNodeValueColumns().Keys), peach.GetNodeValueColumns().Values);
         peach.PrintTree();
 
     

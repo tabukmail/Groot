@@ -179,41 +179,51 @@ public class Node : IComparable
                 {
                     int nodeValueIndex = DictionaryIndexFinder(nodeValueColumnName);
                     //Console.WriteLine($":: -> {nodeValueIndex } ++  {nodeValueColumnName}");
-                    
-                    
-                    foreach (Node node in _tree)
+                    if (NodeNameFinder(nodeName))
                     {
-                        // if index value is NOT exists
-                        if (node.GetName() == nodeName && nodeValueIndex > node.GetNodeData().GetNodeValues().Count -1)
+                        //Console.WriteLine($":: -> {NodeNameFinder(nodeName)} is out of range");
+                        foreach (Node node in _tree)
                         {
-                            var condition = nodeValueIndex - (node.GetNodeData().GetNodeValues().Count-1) != 1;
-                            if (condition)
+                            // if index value is NOT exists
+                            if (node.GetName() == nodeName && nodeValueIndex > node.GetNodeData().GetNodeValues().Count -1)
                             {
-                                for (int i = node.GetNodeData().GetNodeValues().Count ; i < nodeValueIndex; i++)
+                                var condition = nodeValueIndex - (node.GetNodeData().GetNodeValues().Count-1) != 1;
+                                if (condition)
                                 {
-                                    node.GetNodeData().GetNodeValues().Add(0);
-                                    //Console.WriteLine(condition);
-                                }
-                               
-                            }        
-                            node.GetNodeData().GetNodeValues().Add(value);
-                           
-                            break;
-                               
+                                    for (int i = node.GetNodeData().GetNodeValues().Count ; i < nodeValueIndex; i++)
+                                    {
+                                        node.GetNodeData().GetNodeValues().Add(0);
+                                        //Console.WriteLine(condition);
+                                    }
+                                   
+                                }        
+                                node.GetNodeData().GetNodeValues().Add(value);
+                                
+                                break;
+                                   
+                            }
+                            
+                            // if index value is exists
+                            if (node.GetName() == nodeName && node.GetNodeData().GetNodeValues().Count > nodeValueIndex)
+                            {
+                               // Console.WriteLine($":: -> {node.GetNodeData().GetNodeValues()[nodeValueIndex]} -- value --> {value} --- index --> {nodeValueIndex}");
+                                node.GetNodeData().GetNodeValues()[nodeValueIndex] = value;
+                                break;
+                            }
+                    
                         }
-                        
-                        // if index value is exists
-                        if (node.GetName() == nodeName && node.GetNodeData().GetNodeValues().Count-1 > nodeValueIndex)
-                        {
-                            node.GetNodeData().GetNodeValues()[nodeValueIndex] = value;
-                            //Console.WriteLine($":: -> {node.GetNodeData().GetNodeValues()[nodeValueIndex]}");
-                            break;
-                        }
+                    
                     }
+                    else
+                    {
+                        Console.WriteLine($":: -> {nodeName } is not found");
+                    }
+                    
                 }
                 
                 public object GetValueOfSpecificNode(string nodeName, int valueIndex)
                 {
+                    
                     object? value = 0;
                     foreach (Node node in _tree)
                     {
@@ -232,9 +242,30 @@ public class Node : IComparable
                     return value!;
                 }
                 
+                public object GetValueOfSpecificNode2(string nodeName, string nodeValueColumnName)
+                {
+                    int nodeValueIndex = DictionaryIndexFinder(nodeValueColumnName);
+                    object? value = 0;
+                    foreach (Node node in _tree)
+                    {
+                        if (node.GetName() == nodeName && nodeValueIndex <= node.GetNodeData().GetNodeValues().Count-1)
+                        {
+                            value = node.GetNodeData().GetNodeValues()[nodeValueIndex];
+                            //Console.WriteLine(value);
+                        } else if ((node.GetName() == nodeName && nodeValueIndex > node.GetNodeData().GetNodeValues().Count-1))
+                        {
+                            Console.WriteLine("ther is no value on this index");
+                            value = false;
+                        }
+                       
+                    }
+
+                    return value!;
+                }
+                
                 public string PrintAllValuesOfNode(string nodeName)
                 {
-                    string? value = "";
+                    string value = "";
                     foreach (Node node in _tree)
                     {
                         if (node.GetName() == nodeName)
@@ -323,6 +354,20 @@ public class Node : IComparable
                     
                     return counter;
                 }
+
+                private bool NodeNameFinder(string name)
+                {
+                    foreach (Node? node in _tree.ToArray())
+                    {
+                        if (node?.GetName() == name)
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                    
+                }
+                
                 
                 
         }

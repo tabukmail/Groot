@@ -19,10 +19,6 @@ namespace Treeton;
 // 10. options to export(): XLSX, CSV, XML, JSON or DB option 
 
 
-
-
-
-
 public class Node : IComparable
 {
     private int _parentId;

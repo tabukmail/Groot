@@ -52,3 +52,5 @@
 /home/bali/RiderProjects/Groot/GrootProject/obj/Debug/net9.0/groot_pr.pdb
 /home/bali/RiderProjects/Groot/GrootProject/obj/Debug/net9.0/groot_pr.genruntimeconfig.cache
 /home/bali/RiderProjects/Groot/GrootProject/obj/Debug/net9.0/ref/groot_pr.dll
+/home/bali/RiderProjects/Groot/GrootProject/bin/Debug/net9.0/groot_pr.xml
+/home/bali/RiderProjects/Groot/GrootProject/obj/Debug/net9.0/groot_pr.xml

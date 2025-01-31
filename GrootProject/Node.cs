@@ -179,7 +179,35 @@ public class Node : IComparable
                 {
                     int nodeValueIndex = DictionaryIndexFinder(nodeValueColumnName);
                     //Console.WriteLine($":: -> {nodeValueIndex } ++  {nodeValueColumnName}");
-                    if (NodeNameFinder(nodeName))
+                    
+                    
+                    bool valueColumnTypeCheck = false;
+                    switch (GetNodeValueColumns()[nodeValueColumnName])
+                    {
+                        case ValueColumnType.String: 
+                            valueColumnTypeCheck = value is string;
+                            break;
+                        case ValueColumnType.Integer:
+                            valueColumnTypeCheck = value is int;
+                            break;
+                        case ValueColumnType.Float:
+                            valueColumnTypeCheck = value is float;
+                            break;
+                        case ValueColumnType.Double:
+                            valueColumnTypeCheck = value is double;
+                            break;
+                        case ValueColumnType.Boolean:
+                            valueColumnTypeCheck = value is bool;
+                            break;
+                        case ValueColumnType.Custom:
+                            valueColumnTypeCheck = value is not null;
+                            break;
+                    }
+                    
+                    //Console.WriteLine(valueColumnTypeCheck);
+                    
+                    
+                    if (NodeNameFinder(nodeName) && valueColumnTypeCheck)
                     {
                         //Console.WriteLine($":: -> {NodeNameFinder(nodeName)} is out of range");
                         foreach (Node node in _tree)
@@ -216,7 +244,7 @@ public class Node : IComparable
                     }
                     else
                     {
-                        Console.WriteLine($":: -> {nodeName } is not found");
+                        Console.WriteLine($":: ->  Please check {nodeName } node name or it's value column type and value type {value}");
                     }
                     
                 }

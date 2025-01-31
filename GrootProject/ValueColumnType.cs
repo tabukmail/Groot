@@ -7,5 +7,6 @@ public enum ValueColumnType
     Float,
     Double,
     Boolean,
+    Custom,
   
 }

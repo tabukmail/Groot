@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj": {}
+    "/root/groot/GrootProject/groot_pr.csproj": {}
   },
   "projects": {
-    "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj": {
+    "/root/groot/GrootProject/groot_pr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj",
+        "projectUniqueName": "/root/groot/GrootProject/groot_pr.csproj",
         "projectName": "groot_pr",
-        "projectPath": "/home/bali/RiderProjects/Groot/GrootProject/groot_pr.csproj",
-        "packagesPath": "/home/bali/.nuget/packages/",
-        "outputPath": "/home/bali/RiderProjects/Groot/GrootProject/obj/",
+        "projectPath": "/root/groot/GrootProject/groot_pr.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/root/groot/GrootProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/bali/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

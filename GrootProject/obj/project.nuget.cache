@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "7LJmtwkE7JQ=",
-=======
-  "dgSpecHash": "hRiBRbAeDdo=",
->>>>>>> 2604091 (some update)
+  "dgSpecHash": "vjo3HTWyixA=",
   "success": true,
   "projectFilePath": "/root/groot/GrootProject/groot_pr.csproj",
-  "expectedPackageFiles": [
-    "/root/.nuget/packages/passwordgenerator/2.1.0/passwordgenerator.2.1.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

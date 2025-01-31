@@ -1,36 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {
-      "PasswordGenerator/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/PasswordGenerator.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/PasswordGenerator.dll": {}
-        }
-      }
-    }
+    "net9.0": {}
   },
-  "libraries": {
-    "PasswordGenerator/2.1.0": {
-      "sha512": "G70cCeAOYCk/uTuFw5PBGpYY9kmBZyzld7tphachvyU514PowMRDYyKwTefxIHNGWrhXY2d1DV5B1tDEnTtY3A==",
-      "type": "package",
-      "path": "passwordgenerator/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/PasswordGenerator.dll",
-        "passwordgenerator.2.1.0.nupkg.sha512",
-        "passwordgenerator.nuspec"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net9.0": [
-      "PasswordGenerator >= 2.1.0"
-    ]
+    "net9.0": []
   },
   "packageFolders": {
     "/root/.nuget/packages/": {}
@@ -74,12 +49,6 @@
     "frameworks": {
       "net9.0": {
         "targetAlias": "net9.0",
-        "dependencies": {
-          "PasswordGenerator": {
-            "target": "Package",
-            "version": "[2.1.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

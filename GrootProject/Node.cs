@@ -196,7 +196,7 @@ public class Node : IComparable
                             valueColumnTypeCheck = value is bool;
                             break;
                         case ValueColumnType.Custom:
-                            valueColumnTypeCheck = value is not null;
+                            valueColumnTypeCheck = true;
                             break;
                     }
                     

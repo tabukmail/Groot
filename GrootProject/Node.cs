@@ -138,7 +138,57 @@ public class Node : IComparable
                    _tree.Sort();
                         
                    }
+                
+                public void AddNode2(string parentName, string newNodeName)
+                {
 
+                    int parentId = NodeIdFinder(parentName);
+                    if ((parentId > _tree.Count) || (parentId  <= 0)){
+                        Console.WriteLine($":: -> {parentId } is out of possible range");
+                        return;
+                    }
+                    
+                    var lefthKey = 0;
+                    var rightKey = 0;
+                    var level = 0;
+                    var parentRightKey = 0;
+                    var parentLefthKey = 0;
+                    
+                   foreach (Node? node_i in _tree.ToArray())
+                    {
+                        if (node_i != null && parentId == node_i.GetId())
+                        {
+                            parentRightKey = node_i.GetRight_Key();
+                            parentLefthKey = node_i.GetLeft_Key();
+                            lefthKey = node_i.GetRight_Key();
+                            rightKey = lefthKey + 1;
+                            level = node_i.GetLevel() + 1;
+                            node_i.setRight_Key(node_i.GetRight_Key() + 2);
+                            
+                        }
+                    }
+                   
+                    foreach (Node? node_j in _tree.ToArray())
+                    {
+                        if (node_j != null && node_j.GetLeft_Key() > parentRightKey)
+                        {
+                            node_j.setRight_Key(node_j.GetRight_Key() + 2);
+                            node_j.setLeft_Key(node_j.GetLeft_Key() + 2);
+                        }
+                        
+                        if (node_j != null && node_j.GetRight_Key() > parentRightKey && node_j.GetLeft_Key() < parentLefthKey)
+                        {
+                            node_j.setRight_Key(node_j.GetRight_Key() + 2);
+                        }
+                    }
+                   
+                    _tree.Add (new Node(parentId, _tree.Count + 1, lefthKey, rightKey, level, newNodeName, new NodeValues()));
+                    
+                   
+                   _tree.Sort();
+                        
+                   }
+                
                 public void AddValueToSpecificNode(string nodeName, int nodeValueIndex, object value)
                 {
                     foreach (Node node in _tree)
@@ -389,6 +439,19 @@ public class Node : IComparable
                         }
                     }
                     return false;
+                    
+                }
+                
+                private int NodeIdFinder(string name)
+                {
+                    foreach (Node? node in _tree.ToArray())
+                    {
+                        if (node?.GetName() == name)
+                        {
+                            return node._id;
+                        }
+                    }
+                    return -1;
                     
                 }
                 

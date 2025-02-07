@@ -10,9 +10,10 @@ class Program
     static void Main()
     {
         Node.Root peach = new Node.Root();
-        peach.AddNode(1, "Hello");
+        peach.AddNode2("root", "Hello");
         peach.AddNode(1, "Bonjour");
         peach.AddNode(2, "Tinto");
+        peach.AddNode2("Tinto", "Tinto2");
         
         peach.SetUpNodeValueColumn("acc_name", ValueColumnType.String); 
         peach.SetUpNodeValueColumn("debit", ValueColumnType.Integer);
